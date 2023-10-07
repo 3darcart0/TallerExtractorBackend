@@ -26,6 +26,6 @@ export class Vehicle {
     @JoinColumn({ name: 'modelId' })
     model: Model;
 
-    @Column()
+    @Column({ default: true })
     isAvailable: boolean;
 }

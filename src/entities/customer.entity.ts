@@ -20,6 +20,6 @@ export class Customer {
     @JoinColumn({ name: 'userId', referencedColumnName: 'userId'})
     user: User;
 
-    @Column()
+    @Column({ default: true })
     isAvailable: boolean;
 }

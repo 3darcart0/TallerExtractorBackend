@@ -8,6 +8,6 @@ export class Brand {
     @Column()
     brandName: string;
 
-    @Column()
+    @Column({ default: true })
     isAvailable: boolean;
 }

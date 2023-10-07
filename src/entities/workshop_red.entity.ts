@@ -8,6 +8,6 @@ export class WorkshopRed {
     @Column()
     workshopRedName: string;
 
-    @Column()
+    @Column({ default: true })
     isAvailable: boolean;
 }

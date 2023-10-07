@@ -9,9 +9,6 @@ export class Group{
     @PrimaryGeneratedColumn()
     groupId: number;
 
-    @Column()
-    groupName: string;
-
     @ManyToOne(() => WorkshopRed)
     @JoinColumn({ name: 'workshopRedId' })
     workshopRed: WorkshopRed;
