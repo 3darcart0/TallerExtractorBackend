@@ -8,6 +8,9 @@ export class WorkshopRed {
     @Column()
     workshopRedName: string;
 
+    @Column({ length: 6 })
+    workshopRedCode: string;
+
     @Column()
     isAvailable: boolean;
 }
