@@ -1,9 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn, Index, OneToMany } from "typeorm"
 import { User } from "./user.entity";
-import { Vehicle } from "./vehicle.entity";
 
 @Entity()
-@Index('ci_document', { unique: true })
 export class Customer {
     @PrimaryGeneratedColumn()
     customerId: number;
@@ -15,10 +13,11 @@ export class Customer {
     lastName: string;
 
     @Column({ length: 8 })
+    @Index('ci_document', { unique: true })
     document: string;
 
-    @OneToOne(() => User, user => user.userId, { cascade: true })
-    @JoinColumn()
+    @OneToOne(() => User, { cascade: true })
+    @JoinColumn({ name: 'userId', referencedColumnName: 'userId'})
     user: User;
 
     @Column()

@@ -1,6 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, ManyToMany, JoinTable } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, ManyToMany, JoinTable, JoinColumn } from 'typeorm';
 import { Group } from './group.entity';
-import { Vehicle } from './vehicle.entity';
+import { Vehicle } from '../vehicles/vehicle.entity';
 
 @Entity()
 export class Policy {
@@ -10,10 +10,11 @@ export class Policy {
     @Column()
     policyName: string;
 
-    @ManyToMany(() => Group)
-    @JoinTable()
-    groups: Group[];
+    @ManyToOne(() => Group)
+    @JoinColumn({ name: 'groupId' })
+    groupId: Group[];
 
-    @ManyToOne(() => Vehicle, vehicle => vehicle.policy)
+    @ManyToOne(() => Vehicle)
+    @JoinColumn({ name: 'vehicleId' })
     vehicle: Vehicle;
 }
