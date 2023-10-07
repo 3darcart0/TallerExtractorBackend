@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne, JoinColumn } from 'typeorm';
 import { WorkshopRed } from './workshop_red.entity';
 import { Workshop } from './workshop.entity';
 import { BranchOffice } from './branch_office.entity';
@@ -12,12 +12,15 @@ export class Group{
     @Column()
     groupName: string;
 
-    @ManyToOne(() => WorkshopRed, workshopRed => workshopRed.workshopRedId)
+    @ManyToOne(() => WorkshopRed)
+    @JoinColumn({ name: 'workshopRedId' })
     workshopRed: WorkshopRed;
 
-    @ManyToOne(() => Workshop, workshop => workshop.workshopId)
+    @ManyToOne(() => Workshop)
+    @JoinColumn({ name: 'workshopId' })
     workshops: Workshop[];
 
-    @ManyToOne(() => BranchOffice, branchOffice => branchOffice.branchOfficeId)
+    @ManyToOne(() => BranchOffice)
+    @JoinColumn({ name: 'branchOfficeId' })
     branchOffice: BranchOffice[];
 }
