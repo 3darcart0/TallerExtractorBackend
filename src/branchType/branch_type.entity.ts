@@ -3,7 +3,7 @@ import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm"
 @Entity()
 export class BranchType {
     @PrimaryGeneratedColumn()
-    branchTypelId: number;
+    branchTypeId: number;
 
     @Column()
     branchTypeName: string;
