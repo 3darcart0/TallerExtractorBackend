@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from "typeorm"
 import { BranchType } from "../branchType/branch_type.entity";
-import { District } from "./district.entity";
+import { District } from "../district/district.entity";
 
 @Entity()
 export class BranchOffice {

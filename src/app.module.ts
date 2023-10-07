@@ -16,7 +16,8 @@ import { BranchType } from './branchType/branch_type.entity';
 import { Group } from './entities/group.entity';
 import { Policy } from './entities/policy.entity';
 import { BranchTypeModule } from './branchType/branch_type.module';
-import { District } from './entities/district.entity';
+import { District } from './district/district.entity';
+import { DistrictModule } from './district/branch_type.module';
 
 @Module({
   imports: [
@@ -33,7 +34,8 @@ import { District } from './entities/district.entity';
       autoLoadEntities: true,
     }),
     VehicleModule,
-    BranchTypeModule
+    BranchTypeModule,
+    DistrictModule
   ],
   controllers: [AppController],
   providers: [AppService],
