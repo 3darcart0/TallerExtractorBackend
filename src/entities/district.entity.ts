@@ -1,15 +1,12 @@
 import { Entity, Column, PrimaryGeneratedColumn } from "typeorm"
 
 @Entity()
-export class Workshop {
+export class District {
     @PrimaryGeneratedColumn()
-    workshopId: number;
+    districId: number;
 
     @Column()
-    workshopName: string;
-
-    @Column()
-    webPage: string;
+    district: string;
 
     @Column()
     isAvailable: boolean;

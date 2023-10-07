@@ -12,9 +12,11 @@ import { Model } from './entities/model.entity';
 import { WorkshopRed } from './entities/workshop_red.entity';
 import { Workshop } from './entities/workshop.entity';
 import { BranchOffice } from './entities/branch_office.entity';
-import { BranchType } from './entities/branch_type.entity';
+import { BranchType } from './branchType/branch_type.entity';
 import { Group } from './entities/group.entity';
 import { Policy } from './entities/policy.entity';
+import { BranchTypeModule } from './branchType/branch_type.module';
+import { District } from './entities/district.entity';
 
 @Module({
   imports: [
@@ -26,11 +28,12 @@ import { Policy } from './entities/policy.entity';
       username: process.env.MYSQL_USER,
       password: process.env.MYSQL_PASSWORD,
       database: process.env.MYSQL_DATABASE,
-      entities: [Vehicle, Customer, User, Brand, Model, WorkshopRed, Workshop, Workshop, BranchOffice, BranchType, Group, Policy],
-      synchronize: false,
+      entities: [Vehicle, Customer, User, Brand, Model, WorkshopRed, Workshop, Workshop, BranchOffice, BranchType, Group, Policy, District],
+      synchronize: true,
       autoLoadEntities: true,
     }),
-    VehicleModule
+    VehicleModule,
+    BranchTypeModule
   ],
   controllers: [AppController],
   providers: [AppService],
