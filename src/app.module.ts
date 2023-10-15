@@ -14,11 +14,12 @@ import { Workshop } from './entities/workshop.entity';
 import { BranchOffice } from './entities/branch_office.entity';
 import { BranchType } from './branchType/branch_type.entity';
 import { Group } from './group/group.entity';
-import { Policy } from './entities/policy.entity';
+import { Policy } from './policy/policy.entity';
 import { BranchTypeModule } from './branchType/branch_type.module';
 import { District } from './district/district.entity';
 import { DistrictModule } from './district/branch_type.module';
 import { GroupModule } from './group/group.module';
+import { PolicyModule } from './policy/policy.module';
 
 @Module({
   imports: [
@@ -33,11 +34,13 @@ import { GroupModule } from './group/group.module';
       entities: [Vehicle, Customer, User, Brand, Model, WorkshopRed, Workshop, Workshop, BranchOffice, BranchType, Group, Policy, District],
       synchronize: true,
       autoLoadEntities: true,
+      logging: true,
     }),
     VehicleModule,
     BranchTypeModule,
     DistrictModule,
-    GroupModule
+    GroupModule,
+    PolicyModule
   ],
   controllers: [AppController],
   providers: [AppService],
