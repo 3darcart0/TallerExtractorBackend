@@ -13,10 +13,12 @@ import { WorkshopRed } from './entities/workshop_red.entity';
 import { Workshop } from './entities/workshop.entity';
 import { BranchOffice } from './entities/branch_office.entity';
 import { BranchType } from './branchType/branch_type.entity';
-import { Group } from './entities/group.entity';
+import { Group } from './group/group.entity';
 import { Policy } from './entities/policy.entity';
 import { BranchTypeModule } from './branchType/branch_type.module';
-import { District } from './entities/district.entity';
+import { District } from './district/district.entity';
+import { DistrictModule } from './district/branch_type.module';
+import { GroupModule } from './group/group.module';
 
 @Module({
   imports: [
@@ -33,7 +35,9 @@ import { District } from './entities/district.entity';
       autoLoadEntities: true,
     }),
     VehicleModule,
-    BranchTypeModule
+    BranchTypeModule,
+    DistrictModule,
+    GroupModule
   ],
   controllers: [AppController],
   providers: [AppService],
