@@ -8,6 +8,6 @@ export class District {
     @Column()
     district: string;
 
-    @Column()
+    @Column({ default: true })
     isAvailable: boolean;
 }

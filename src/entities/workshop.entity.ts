@@ -8,9 +8,9 @@ export class Workshop {
     @Column()
     workshopName: string;
 
-    @Column()
+    @Column({ nullable: true })
     webPage: string;
 
-    @Column()
+    @Column({ default: true })
     isAvailable: boolean;
 }

@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
-import { Group } from './group.entity';
+import { Group } from '../group/group.entity';
 import { Vehicle } from '../vehicles/vehicle.entity';
 
 @Entity()

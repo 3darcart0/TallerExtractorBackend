@@ -9,7 +9,7 @@ export class Model {
     @Column()
     modelName: string;
 
-    @Column()
+    @Column({ default: true })
     isAvailable: boolean;
 
     @ManyToOne(() => Brand)

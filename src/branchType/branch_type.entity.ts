@@ -8,6 +8,6 @@ export class BranchType {
     @Column()
     branchTypeName: string;
 
-    @Column()
+    @Column({ default: true })
     isAvailable: boolean;
 }

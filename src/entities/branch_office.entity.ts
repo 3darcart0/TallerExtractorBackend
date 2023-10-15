@@ -20,7 +20,7 @@ export class BranchOffice {
       })
       coordinates: string;
 
-    @Column()
+    @Column({ default: true })
     isAvailable: boolean;
 
     @ManyToOne(() => BranchType)

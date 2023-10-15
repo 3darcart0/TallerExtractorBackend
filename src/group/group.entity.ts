@@ -1,16 +1,12 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne, JoinColumn } from 'typeorm';
-import { WorkshopRed } from './workshop_red.entity';
-import { Workshop } from './workshop.entity';
-import { BranchOffice } from './branch_office.entity';
-import { Policy } from './policy.entity';
+import { WorkshopRed } from '../entities/workshop_red.entity';
+import { Workshop } from '../entities/workshop.entity';
+import { BranchOffice } from '../entities/branch_office.entity';
 
 @Entity()
 export class Group{
     @PrimaryGeneratedColumn()
     groupId: number;
-
-    @Column()
-    groupName: string;
 
     @ManyToOne(() => WorkshopRed)
     @JoinColumn({ name: 'workshopRedId' })
